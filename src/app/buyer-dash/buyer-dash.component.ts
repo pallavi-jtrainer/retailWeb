@@ -1,6 +1,6 @@
 import { ItemsService } from './../items.service';
 import { Observable } from 'rxjs';
-import { Items } from './../items/items';
+import { Items } from '../item-details/items';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BuyerService } from './../buyer.service';
 import { Component, OnInit } from '@angular/core';
@@ -53,6 +53,6 @@ export class BuyerDashComponent implements OnInit {
   }
 
   showItemDetails(itemId: number, buyerId: number) {
-    this.router.navigate(['/itemdetails', {itemId, buyerId}]);
+    this.router.navigate(['/itemdetails', itemId, buyerId]);
   }
 }

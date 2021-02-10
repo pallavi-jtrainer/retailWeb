@@ -1,6 +1,6 @@
 import { SupplierService } from './../supplier.service';
 import { Supplier } from './../supplier-dash/Supplier';
-import { Items } from './../items/items';
+import { Items } from './items';
 import { ItemsService } from './../items.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BuyerService } from './../buyer.service';
