@@ -1,3 +1,4 @@
+import { ItemDetailsComponent } from './item-details/item-details.component';
 import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
 import { BuyerDashComponent } from './buyer-dash/buyer-dash.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'buyerdash/:id', component: BuyerDashComponent},
   {path: 'suppdash/:id', component: SupplierDashComponent},
   {path: 'buyerdetails/:id', component: BuyerDetailsComponent},
+  {path: 'itemdetails/:id/:id2', component: ItemDetailsComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

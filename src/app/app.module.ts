@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -10,6 +15,10 @@ import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { InlineEditComponent } from './inline-edit/inline-edit.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 
 @NgModule({
@@ -22,12 +31,19 @@ import { InlineEditComponent } from './inline-edit/inline-edit.component';
     BuyerDetailsComponent,
     ItemsComponent,
     ItemDetailsComponent,
-    InlineEditComponent
+    InlineEditComponent,
+    OrdersComponent,
+    OrderDetailsComponent,
+    SupplierDetailsComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    BackButtonDisableModule.forRoot({
+      preserveScrollPosition: true
+    }),
     AppRoutingModule
   ],
   providers: [],

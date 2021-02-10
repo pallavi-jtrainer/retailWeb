@@ -47,11 +47,12 @@ export class BuyerDashComponent implements OnInit {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.router.navigate(['/buyerdetails', this.id]);
   }
+
   showMyOrders() {
 
   }
 
-  showItemDetails(itemId: number) {
-
+  showItemDetails(itemId: number, buyerId: number) {
+    this.router.navigate(['/itemdetails', {itemId, buyerId}]);
   }
 }
