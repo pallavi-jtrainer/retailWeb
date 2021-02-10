@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BuyerDashComponent } from './buyer-dash/buyer-dash.component';
+import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BuyerDashComponent } from './buyer-dash/buyer-dash.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    BuyerDashComponent
+    BuyerDashComponent,
+    SupplierDashComponent
   ],
   imports: [
     BrowserModule,

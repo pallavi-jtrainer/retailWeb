@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['buyerdash/', this.login.userId]);
         }
         if (this.login.userType === 'SUPPLIER') {
-          alert('Supplier Dashboard');
+          this.router.navigate(['suppdash/', this.login.userId]);
         }
       }
       if (Object.keys(this.login).length === 0) {

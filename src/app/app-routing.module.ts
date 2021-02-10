@@ -1,3 +1,4 @@
+import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
 import { BuyerDashComponent } from './buyer-dash/buyer-dash.component';
 import { RegisterComponent } from './register/register.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: RegisterComponent},
   {path: 'buyerdash/:id', component: BuyerDashComponent},
+  {path: 'suppdash/:id', component: SupplierDashComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
