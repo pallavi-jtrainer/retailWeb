@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     if (this.userType === 'BUYER' && this.passcode === this.passAgain) {
       this.buyer.buyerName = this.uName;
-      this.buyer.address = this.address;
+      this.buyer.addr = this.address;
       this.buyer.contact = this.contact;
       this.buyer.emailAddr = this.emailAddr;
       this.buyerService.registerBuyer(this.buyer, this.userName, this.passcode)

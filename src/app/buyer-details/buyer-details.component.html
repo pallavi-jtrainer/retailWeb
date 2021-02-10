@@ -15,30 +15,39 @@
     <div class="panel-body">
       <div class="col-lg-3 col-md-2"></div>
       <div *ngIf="b">
-        <table class="table table-sm table-dark">
+        <table class="t-container">
           <tr>
-            <td>ID:</td>
-            <td>{{b.buyerId}}</td>
+            <td class="td-1" style="padding-left: 2%;">ID:</td>
+            <td class="td" style="padding-left: 4%;">{{b.buyerId}}</td>
           </tr>
           <tr>
-            <td>Name:</td>
-            <td>{{b.buyerName}}</td>
+            <td class="td-1" style="padding-left: 2%;">Name:</td>
+            <td class="td" style="padding-left: 4%;">{{b.buyerName}}</td>
           </tr>
           <tr>
-            <td>Address:</td>
-            <td>{{b.addr}}</td>
+            <td class="td-1" style="padding-left: 2%;">Address:</td>
+            <td class="td" style="padding-left: 4%;">
+              <app-inline-edit [(ngModel)]="b.addr" type="text" name="address" #address="ngModel"></app-inline-edit>
+            </td>
+            <td><a (click)="updateAddress(address.value)"><i class="glyphicon glyphicon-pencil"></i></a></td>
           </tr>
           <tr>
-            <td>Contact No.:</td>
-            <td>{{b.contact}}</td>
+            <td class="td-1" style="padding-left: 2%;">Contact No.:</td>
+            <td class="td" style="padding-left: 4%;">
+              <app-inline-edit [(ngModel)]="b.contact" type="text" name="phone" #phone="ngModel"></app-inline-edit>
+            </td>
+            <td><a (click)="updatePhone(phone.value)"><i class="glyphicon glyphicon-pencil"></i></a></td>
           </tr>
           <tr>
-            <td>Email:</td>
-            <td>{{b.emailAddr}}</td>
+            <td class="td-1" style="padding-left: 2%;">Email:</td>
+            <td class="td" style="padding-left: 4%;">
+              <app-inline-edit [(ngModel)]="b.emailAddr" type="text" name="email" #email="ngModel"></app-inline-edit>
+            </td>
+            <td><a (click)="updateEmail(email.value)"><i class="glyphicon glyphicon-pencil"></i></a></td>
           </tr>
           <tr>
-            <td>Wallet:</td>
-            <td>{{b.walletBalance}}</td>
+            <td class="td-1" style="padding-left: 2%;">Wallet:</td>
+            <td class="td" style="padding-left: 4%;">{{b.walletBalance}}</td>
           </tr>
         </table>
       </div>
@@ -46,3 +55,5 @@
     </div>
   </div>
 </div>
+
+

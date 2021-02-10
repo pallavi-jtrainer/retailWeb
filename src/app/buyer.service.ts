@@ -20,7 +20,31 @@ export class BuyerService {
     const header = {'content-type': 'application/json'};
     const body = JSON.stringify(buyer);
 
-    return this.http.post(`${this.baseUrl}/register/${buyer.buyerName}/${buyer.address}/`
+    return this.http.post(`${this.baseUrl}/register/${buyer.buyerName}/${buyer.addr}/`
       + `${buyer.contact}/${buyer.emailAddr}/${user}/${pass}`, body, {headers: header, responseType: 'text'});
+  }
+
+  updateAddress(buyer: Buyer, address: string): Observable<any> {
+    const header = {'content-type': 'application/json'};
+    const body = JSON.stringify(buyer);
+
+    return this.http.put(`${this.baseUrl}/address/${buyer.buyerId}/${address}`,
+        body, {headers: header, responseType: 'text'});
+  }
+
+  updatePhone(buyer: Buyer, phone: string): Observable<any> {
+    const header = {'content-type': 'application/json'};
+    const body = JSON.stringify(buyer);
+
+    return this.http.put(`${this.baseUrl}/contact/${buyer.buyerId}/${phone}`,
+        body, {headers: header, responseType: 'text'});
+  }
+
+  updateEmail(buyer: Buyer, email: string): Observable<any> {
+    const header = {'content-type': 'application/json'};
+    const body = JSON.stringify(buyer);
+
+    return this.http.put(`${this.baseUrl}/email/${buyer.buyerId}/${email}`,
+        body, {headers: header, responseType: 'text'});
   }
 }

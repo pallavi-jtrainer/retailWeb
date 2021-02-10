@@ -12,6 +12,7 @@ import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
 import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
+import { InlineEditComponent } from './inline-edit/inline-edit.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     SupplierDashComponent,
     BuyerDetailsComponent,
     ItemsComponent,
-    ItemDetailsComponent
+    ItemDetailsComponent,
+    InlineEditComponent
   ],
   imports: [
     BrowserModule,
