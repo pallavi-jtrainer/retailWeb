@@ -55,4 +55,8 @@ export class BuyerDashComponent implements OnInit {
   showItemDetails(itemId: number, buyerId: number) {
     this.router.navigate(['/itemdetails', itemId, buyerId]);
   }
+
+  placeOrder(itemId: number, buyerId: number) {
+    this.router.navigate(['/invoice', itemId, buyerId]);
+  }
 }

@@ -36,7 +36,10 @@
             <td>{{ i.itemId }}</td>
             <td>{{ i.itemName }}</td>
             <td>{{ i.itemCategory }}</td>
-            <td><button class="btn btn-warning"(click)="showItemDetails(i.itemId, b.buyerId)">Details</button></td>
+            <td>
+              <span><button class="btn btn-warning"(click)="showItemDetails(i.itemId, b.buyerId)">Details</button></span>
+              <span><button class="btn btn-warning"(click)="placeOrder(i.itemId, b.buyerId)">Place Order</button></span>
+            </td>
           </tr>
         </tbody>
       </table>

@@ -1,3 +1,4 @@
+import { InvoiceComponent } from './invoice/invoice.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'suppdash/:id', component: SupplierDashComponent},
   {path: 'buyerdetails/:id', component: BuyerDetailsComponent},
   {path: 'itemdetails/:id/:id2', component: ItemDetailsComponent},
+  {path: 'invoice/:id/:id1', component: InvoiceComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

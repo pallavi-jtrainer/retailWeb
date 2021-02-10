@@ -18,6 +18,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 import { AddItemComponent } from './add-item/add-item.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AddItemComponent } from './add-item/add-item.component';
     OrdersComponent,
     OrderDetailsComponent,
     SupplierDetailsComponent,
-    AddItemComponent
+    AddItemComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,

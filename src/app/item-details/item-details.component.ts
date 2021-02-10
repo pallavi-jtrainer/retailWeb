@@ -68,5 +68,9 @@ export class ItemDetailsComponent implements OnInit {
 
   updatePrice(p: number) {
     console.log(p);
+    this.itemService.updatePrice(this.item, p)
+      .subscribe(data => {
+        console.log(data);
+      }, error => console.log(error));
   }
 }
