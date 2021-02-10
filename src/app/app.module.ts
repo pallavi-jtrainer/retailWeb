@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BuyerDashComponent } from './buyer-dash/buyer-dash.component';
 import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
+import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
+import { ItemsComponent } from './items/items.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
     LoginComponent,
     RegisterComponent,
     BuyerDashComponent,
-    SupplierDashComponent
+    SupplierDashComponent,
+    BuyerDetailsComponent,
+    ItemsComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,

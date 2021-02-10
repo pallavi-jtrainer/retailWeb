@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   emailAddr = '';
   passcode = '';
   passAgain = '';
-  addr = '';
+  address = '';
   uName = '';
 
   buyer: Buyer = new Buyer();
@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     if (this.userType === 'BUYER' && this.passcode === this.passAgain) {
       this.buyer.buyerName = this.uName;
-      this.buyer.address = this.addr;
+      this.buyer.address = this.address;
       this.buyer.contact = this.contact;
       this.buyer.emailAddr = this.emailAddr;
       this.buyerService.registerBuyer(this.buyer, this.userName, this.passcode)
@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
 
     if (this.userType === 'SUPPLIER' && this.passcode === this.passAgain) {
       this.sup.supplierName = this.uName;
-      this.sup.address = this.addr;
+      this.sup.address = this.address;
       this.sup.contact = this.contact;
       this.sup.emailAddr = this.emailAddr;
       this.supplierService.registerSupplier(this.sup, this.userName, this.passcode)

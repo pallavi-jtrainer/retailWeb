@@ -1,1 +1,45 @@
-<p>buyer-dash works!</p>
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Welcome {{ buyername }}</h2>
+      <ul>
+        <li><a><i class="glyphicon glyphicon-home space"></i>Home</a></li>
+        <li><a (click)="loadDetails()"><i class="glyphicon glyphicon-user space"></i>Profile</a></li>
+        <li><a><i class="glyphicon glyphicon-list-alt space"></i>My Orders</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-log-out space"></i>Sign Out</a></li>
+      </ul>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-head">
+      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" style="
+      display: grid;">
+            <div class="input-group">
+              <input type="search" id="searchbar" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+              <div class="input-group-append" style="display: inline-flex;
+              margin-top: 17px;">
+                <button id="search-button" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr id="head-row">
+            <th>ID</th>
+            <th>DESCRIPTION</th>
+            <th>CATEGORY</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let i of items | async'>
+            <td>{{ i.itemId }}</td>
+            <td>{{ i.itemName }}</td>
+            <td>{{ i.itemCategory }}</td>
+            <td><button class="btn btn-warning"(click)="showItemDetails(i.itemId)">Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

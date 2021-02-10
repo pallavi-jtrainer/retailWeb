@@ -1,3 +1,4 @@
+import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
 import { BuyerDashComponent } from './buyer-dash/buyer-dash.component';
 import { RegisterComponent } from './register/register.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'signup', component: RegisterComponent},
   {path: 'buyerdash/:id', component: BuyerDashComponent},
   {path: 'suppdash/:id', component: SupplierDashComponent},
+  {path: 'buyerdetails/:id', component: BuyerDetailsComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
