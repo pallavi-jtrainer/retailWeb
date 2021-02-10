@@ -10,36 +10,38 @@
   </div>
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2>PROFILE INFORMATION</h2>
+      <h2 class="header-content">PROFILE INFORMATION</h2>
     </div>
     <div class="panel-body">
       <div class="col-lg-3 col-md-2"></div>
       <div *ngIf="b">
-        <table class="t-container">
-          <tr>
-            <td class="td" style="padding-left: 2%;">ID:</td>
-            <td class="td" style="padding-left: 4%;">{{b.buyerId}}</td>
-          </tr>
-          <tr>
-            <td class="td" style="padding-left: 2%;">Name:</td>
-            <td class="td" style="padding-left: 4%;">{{b.buyerName}}</td>
-          </tr>
-          <tr>
-            <td class="td" style="padding-left: 2%;">Address:</td>
-            <td class="td" style="padding-left: 4%;">{{b.address}}</td>
-          </tr>
-          <tr>
-            <td class="td" style="padding-left: 2%;">Contact No.:</td>
-            <td class="td" style="padding-left: 4%;">{{b.contact}}</td>
-          </tr>
-          <tr>
-            <td class="td" style="padding-left: 2%;">Email:</td>
-            <td class="td" style="padding-left: 4%;">{{b.emailAddr}}</td>
-          </tr>
-          <tr>
-            <td class="td" style="padding-left: 2%;">Wallet:</td>
-            <td class="td" style="padding-left: 4%;">{{b.walletBalance}}</td>
-          </tr>
+        <table class="table t-container table-sm table-dark">
+          <tbody>
+            <tr>
+              <td>ID:</td>
+              <td>{{b.buyerId}}</td>
+            </tr>
+            <tr>
+              <td>Name:</td>
+              <td>{{b.buyerName}}</td>
+            </tr>
+            <tr>
+              <td>Address:</td>
+              <td>{{b.addr}}</td>
+            </tr>
+            <tr>
+              <td>Contact No.:</td>
+              <td>{{b.contact}}</td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+              <td>{{b.emailAddr}}</td>
+            </tr>
+            <tr>
+              <td>Wallet:</td>
+              <td>{{b.walletBalance}}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div class="col-lg-3 col-md-2"></div>
