@@ -21,22 +21,22 @@ export class LoginComponent implements OnInit {
   }
 
   signin() {
-    console.log(this.passWord);
+    // console.log(this.passWord);
     this.loginService.getUserById(this.userName)
-    .subscribe(data => {
-      console.log(data);
-      this.login = data;
-      if (this.passWord === this.login.password) {
-        if (this.login.userType === 'BUYER') {
-          this.router.navigate(['buyerdash/', this.login.userId]);
+      .subscribe(data => {
+        console.log(data);
+        this.login = data;
+        if (this.passWord === this.login.password) {
+          if (this.login.userType === 'BUYER') {
+            this.router.navigate(['buyerdash/', this.login.userId]);
+          }
+          if (this.login.userType === 'SUPPLIER') {
+            this.router.navigate(['suppdash/', this.login.userId]);
+          }
         }
-        if (this.login.userType === 'SUPPLIER') {
-          this.router.navigate(['suppdash/', this.login.userId]);
+        if (Object.keys(this.login).length === 0) {
+          alert('Username or Password is Wrong! Please register if you are new here!');
         }
-      }
-      if (Object.keys(this.login).length === 0) {
-        alert('Username or Password is Wrong! Please register if you are new here!');
-      }
     });
   }
 

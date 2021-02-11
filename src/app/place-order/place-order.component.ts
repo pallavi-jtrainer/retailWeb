@@ -7,12 +7,14 @@ import { Buyer } from './../buyer-dash/buyer';
 import { Component, OnInit } from '@angular/core';
 import { Items } from '../item-details/items';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-place-order',
   templateUrl: './place-order.component.html',
-  styleUrls: ['./place-order.component.css']
+  styleUrls: ['./place-order.component.css'],
+  providers: [DatePipe]
 })
 export class PlaceOrderComponent implements OnInit {
 
@@ -24,13 +26,18 @@ export class PlaceOrderComponent implements OnInit {
   s: Supplier;
   quantity = 1;
   total = 0;
+  curDate = new Date();
+  str: string;
 
   constructor(private buyerService: BuyerService, private router: Router,
               private route: ActivatedRoute, private itemService: ItemsService,
-              private supplierService: SupplierService) { }
+              private supplierService: SupplierService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.b = new Buyer();
+    this.str = this.datePipe.transform(this.curDate, 'yyyy-MM-dd');
+    // this.curDate = new Date(this.str);
+    // console.log(this.curDate);
 
     // tslint:disable-next-line: radix
     this.bId = parseInt(this.route.snapshot.paramMap.get('id1'));
@@ -65,8 +72,7 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   goHome() {
-    // tslint:disable-next-line: radix
-    this.bId = parseInt(this.route.snapshot.paramMap.get('id2'));
+    console.log(this.bId);
     this.router.navigate(['/buyerdash', this.bId]);
   }
 

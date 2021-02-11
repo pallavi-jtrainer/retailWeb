@@ -26,7 +26,10 @@ export class BuyerDashComponent implements OnInit {
     this.b = new Buyer();
 
     // tslint:disable-next-line: radix
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+    // this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+
+    // tslint:disable-next-line: no-string-literal
+    this.id = this.route.snapshot.params['id'];
 
     this.buyerService.getBuyerById(this.id)
       .subscribe(data => {
