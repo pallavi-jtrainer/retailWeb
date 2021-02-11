@@ -10,7 +10,7 @@
   </div>
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2 class="header-content">PROFILE INFORMATION</h2>
+      <h2 class="header-content">PRODUCT INFORMATION</h2>
     </div>
     <div class="panel-body">
       <div class="col-lg-3 col-md-2"></div>
@@ -26,10 +26,7 @@
           </tr>
           <tr>
             <td class="td-1" style="padding-left: 2%;">Price:</td>
-            <td class="td" style="padding-left: 4%;">
-              <app-inline-edit [(ngModel)]="item.price" type="text" name="iprice" #iprice="ngModel"></app-inline-edit>
-            </td>
-            <td><a (click)="updatePrice(iprice.value)"><i class="glyphicon glyphicon-pencil"></i></a></td>
+            <td class="td" style="padding-left: 4%;">{{item.price}}</td>
           </tr>
           <tr>
             <td class="td-1" style="padding-left: 2%;">Supplier Name:</td>

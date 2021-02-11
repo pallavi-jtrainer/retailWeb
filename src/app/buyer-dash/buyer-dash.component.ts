@@ -57,6 +57,6 @@ export class BuyerDashComponent implements OnInit {
   }
 
   placeOrder(itemId: number, buyerId: number) {
-    this.router.navigate(['/invoice', itemId, buyerId]);
+    this.router.navigate(['/placeorder', itemId, buyerId]);
   }
 }

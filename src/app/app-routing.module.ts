@@ -1,3 +1,4 @@
+import { PlaceOrderComponent } from './place-order/place-order.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'buyerdetails/:id', component: BuyerDetailsComponent},
   {path: 'itemdetails/:id/:id2', component: ItemDetailsComponent},
   {path: 'invoice/:id/:id1', component: InvoiceComponent},
+  {path: 'placeorder/:id/:id1', component: PlaceOrderComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

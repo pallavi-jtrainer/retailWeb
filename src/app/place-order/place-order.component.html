@@ -1,0 +1,65 @@
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Welcome {{ b.buyerName }}</h2>
+      <ul>
+        <li><a (click)="goHome()"><i class="glyphicon glyphicon-home space"></i>Home</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-user space"></i>Profile</a></li>
+        <li><a><i class="glyphicon glyphicon-list-alt space"></i>My Orders</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-log-out space"></i>Sign Out</a></li>
+      </ul>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h1 class="header-content">ORDER DETAILS</h1>
+    </div>
+    <div class="panel-body">
+        <form name="myForm" #myForm="ngForm" class="form-horizontal" (ngSubmit)="placeOrder()">
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="desc" class="control-label col-sm-9 label-size">Product: </label>
+              <div class="col-lg-12">
+                <input id="desc" name="desc" class="form-control" [value]="item.itemName" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="price" class="control-label col-sm-9 label-size">Price: </label>
+              <div class="col-lg-12">
+                <input id="price" name="price" class="form-control" [value]="item.price" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="end" class="control-label col-sm-9 label-size">Supplier: </label>
+              <div class="col-lg-12">
+                <input id="end" name="end" class="form-control" [value]="s.supplierName" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="qty" class="control-label col-sm-9 label-size">Quantity: </label>
+              <div class="col-sm-9">
+                <input type="number" class="form-control" id="qty" name="qty" [(ngModel)]="quantity" #qty="ngModel">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="tot" class="control-label col-sm-9 label-size">Total: </label>
+              <div class="col-lg-12">
+                <input id="tot" name="tot" class="form-control" [value]="(+item.price) * quantity" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <button class="btn btn-info btnSumit col-md-5" type="submit" style="margin-left: 7%;">Confirm and Place Order</button>
+              <button class="btn btn-danger btnCancel col-md-5" (click)="myForm.reset()">Cancel</button>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>

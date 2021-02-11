@@ -1,30 +1,33 @@
 import { OrdersService } from './../orders.service';
-import { SupplierService } from './../supplier.service';
-import { Supplier } from './../supplier-dash/Supplier';
 import { ItemsService } from './../items.service';
 import { BuyerService } from './../buyer.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Items } from './../item-details/items';
+import { SupplierService } from './../supplier.service';
+import { Supplier } from './../supplier-dash/Supplier';
 import { Buyer } from './../buyer-dash/buyer';
 import { Component, OnInit } from '@angular/core';
+import { Items } from '../item-details/items';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-invoice',
-  templateUrl: './invoice.component.html',
-  styleUrls: ['./invoice.component.css']
+  selector: 'app-place-order',
+  templateUrl: './place-order.component.html',
+  styleUrls: ['./place-order.component.css']
 })
-export class InvoiceComponent implements OnInit {
+export class PlaceOrderComponent implements OnInit {
 
-  b: Buyer;
   bId: number;
-  id: number;
+  b: Buyer;
   item: Items;
-  s: Supplier;
+  id: number;
   sId: number;
+  s: Supplier;
+  quantity = 1;
+  total = 0;
 
-  constructor(private router: Router, private route: ActivatedRoute,
-              private buyerService: BuyerService, private itemService: ItemsService,
-              private supplierService: SupplierService, private orderService: OrdersService) { }
+  constructor(private buyerService: BuyerService, private router: Router,
+              private route: ActivatedRoute, private itemService: ItemsService,
+              private supplierService: SupplierService) { }
 
   ngOnInit(): void {
     this.b = new Buyer();
@@ -38,16 +41,10 @@ export class InvoiceComponent implements OnInit {
         this.b = data;
       }, error => console.log(error));
 
-    this.loadPage();
+    this.reloadData();
   }
 
-  goHome() {
-    // tslint:disable-next-line: radix
-    this.bId = parseInt(this.route.snapshot.paramMap.get('id2'));
-    this.router.navigate(['/buyerdash', this.bId]);
-  }
-
-  loadPage() {
+  reloadData() {
     this.item = new Items();
     this.s = new Supplier();
 
@@ -61,9 +58,19 @@ export class InvoiceComponent implements OnInit {
         this.sId = this.item.supplierId;
         this.supplierService.getSupplierById(this.sId)
           .subscribe(data1 => {
-          console.log(data1);
-          this.s = data1;
-        }, error => console.log(error));
+            console.log(data1);
+            this.s = data1;
+          }, error => console.log(error));
       }, error => console.log(error));
+  }
+
+  goHome() {
+    // tslint:disable-next-line: radix
+    this.bId = parseInt(this.route.snapshot.paramMap.get('id2'));
+    this.router.navigate(['/buyerdash', this.bId]);
+  }
+
+  placeOrder() {
+
   }
 }
