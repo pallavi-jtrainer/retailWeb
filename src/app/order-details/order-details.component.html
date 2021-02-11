@@ -1,1 +1,107 @@
-<p>order-details works!</p>
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Welcome {{ b.buyerName }}</h2>
+      <ul>
+        <li><a (click)="goHome()"><i class="glyphicon glyphicon-home space"></i>Home</a></li>
+        <li><a (click)="loadProfile()"><i class="glyphicon glyphicon-user space"></i>Profile</a></li>
+        <li><a (click)="myOrders()"><i class="glyphicon glyphicon-list-alt space"></i>My Orders</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-log-out space"></i>Sign Out</a></li>
+      </ul>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 class="header-content">INVOICE DETAILS</h2>
+    </div>
+    <div class="panel-body">
+      <div class="col-lg-3 col-md-2"></div>
+        <div class="body-section" *ngIf="order">
+          <div class="row">
+            <div class="col-6">
+                <h2 class="heading">Invoice No.: {{order.orderId}}</h2>
+                <p class="sub-heading">Order Date: {{order.orderDate}} </p>
+                <p class="sub-heading">Email Address: {{s.email}} </p>
+            </div>
+            <div class="col-6">
+                <p class="sub-heading">Full Name: {{b.buyerName}} </p>
+                <p class="sub-heading">Address:  {{b.addr}}</p>
+                <p class="sub-heading">Phone Number: {{b.contact}} </p>
+                <p class="sub-heading">Email Address: {{b.emailAddr}}  </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-section">
+        <h3 class="heading">Ordered Items</h3>
+        <br>
+        <table class="table-bordered">
+            <thead>
+                <tr>
+                    <th style="padding-left: 17%;">Product</th>
+                    <th class="w-20" style="padding-left: 8%;">Price</th>
+                    <th class="w-20">Quantity</th>
+                    <th class="w-20">Grandtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{order.itemQuantity}}</td>
+                    <td>{{order.orderAmt}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right">Sub Total</td>
+                    <td>{{order.orderAmt}}</td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="3" class="text-right">Tax Total %1X</td>
+                    <td> 0</td>
+                </tr> -->
+                <tr>
+                    <td colspan="3" class="text-right">Grand Total</td>
+                    <td> {{order.orderAmt}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h3 class="heading">Payment Mode: Online</h3>
+    </div>
+      <!-- <div *ngIf="order">
+        <table class="t-container">
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">#</td>
+            <td class="td" style="padding-left: 4%;">{{order.orderId}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Date:</td>
+            <td class="td" style="padding-left: 4%;">{{order.orderDate}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Name:</td>
+            <td class="td" style="padding-left: 4%;">{{b.buyerName}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Supplier:</td>
+            <td class="td" style="padding-left: 4%;">{{s.supplierName}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Product:</td>
+            <td class="td" style="padding-left: 4%;">{{item.itemName}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Quantity:</td>
+            <td class="td" style="padding-left: 4%;">{{order.itemQuantity}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Total Amount:</td>
+            <td class="td" style="padding-left: 4%;">{{order.orderAmt}}</td>
+          </tr>
+        </table>
+      </div> -->
+      <div class="col-lg-3 col-md-2"></div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,3 +1,4 @@
+import { Orders } from './order-details/orders';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -23,7 +24,16 @@ export class OrdersService {
     return this.http.get(`${this.baseUrl}/supplierhistory/${id}`);
   }
 
-  // uploadNewOrder(): Observable<any> {
+  uploadNewOrder(order: Orders): Observable<any> {
+    const header = {'content-type': 'application/json'};
+    const body = JSON.stringify(order);
 
-  // }
+    return this.http.post(`${this.baseUrl}/placeOrder/${order.orderDate}/${order.buyerId}/`
+      + `${order.supplierId}/${order.itemId}/${order.itemQuantity}`,
+      body, {headers: header, responseType: 'text'});
+  }
+
+  getOrderAmount(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/amount/${id}`);
+  }
 }

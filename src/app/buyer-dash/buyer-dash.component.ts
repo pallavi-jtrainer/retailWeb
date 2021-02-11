@@ -52,7 +52,7 @@ export class BuyerDashComponent implements OnInit {
   }
 
   showMyOrders() {
-
+    this.router.navigate(['/buyerhistory', this.id]);
   }
 
   showItemDetails(itemId: number, buyerId: number) {

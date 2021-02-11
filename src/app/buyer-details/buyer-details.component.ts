@@ -64,4 +64,8 @@ export class BuyerDetailsComponent implements OnInit {
         console.log(data);
       }, error => console.log());
   }
+
+  myOrders() {
+    this.router.navigate(['/buyerhistory', this.id]);
+  }
 }

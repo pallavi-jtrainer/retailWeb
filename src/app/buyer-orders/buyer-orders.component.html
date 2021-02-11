@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Welcome {{ b.buyerName }}</h2>
+      <ul>
+        <li><a (click)="goHome()"><i class="glyphicon glyphicon-home space"></i>Home</a></li>
+        <li><a (click)="loadDetails()"><i class="glyphicon glyphicon-user space"></i>Profile</a></li>
+        <li><a><i class="glyphicon glyphicon-list-alt space"></i>My Orders</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-log-out space"></i>Sign Out</a></li>
+      </ul>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-head">
+      <h2 class="header-content">MY ORDERS</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr id="head-row">
+            <th>ID</th>
+            <th>DATE</th>
+            <th>AMOUNT</th>
+            <th>STATUS</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let o of orders'>
+            <td>{{ o.orderId }}</td>
+            <td>{{ o.orderDate }}</td>
+            <td>{{ o.orderAmt }}</td>
+            <td>{{ o.orderStatus }}</td>
+            <td>
+              <button class="btn btn-warning"(click)="showOrderDetails(o.orderId, b.buyerId)">Invoice</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

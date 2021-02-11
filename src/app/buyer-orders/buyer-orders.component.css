@@ -74,5 +74,11 @@
 #head-row {
   background-color: cornflowerblue;
   color: ghostwhite;
-   font-size: 15px;
+  font-size: 15px;
+}
+
+.header-content {
+  margin-left: 7%;
+  width: fit-content;
+  margin-top: 15px;
 }

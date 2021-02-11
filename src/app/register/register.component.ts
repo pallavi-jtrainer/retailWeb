@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
       this.sup.supplierName = this.uName;
       this.sup.address = this.address;
       this.sup.contact = this.contact;
-      this.sup.emailAddr = this.emailAddr;
+      this.sup.email = this.emailAddr;
       this.supplierService.registerSupplier(this.sup, this.userName, this.passcode)
         .subscribe(data => {
           console.log(data);

@@ -1,3 +1,4 @@
+import { Orders } from './../order-details/orders';
 import { OrdersService } from './../orders.service';
 import { ItemsService } from './../items.service';
 import { BuyerService } from './../buyer.service';
@@ -28,10 +29,12 @@ export class PlaceOrderComponent implements OnInit {
   total = 0;
   curDate = new Date();
   str: string;
+  order: Orders;
 
   constructor(private buyerService: BuyerService, private router: Router,
               private route: ActivatedRoute, private itemService: ItemsService,
-              private supplierService: SupplierService, private datePipe: DatePipe) { }
+              private supplierService: SupplierService, private datePipe: DatePipe,
+              private orderService: OrdersService) { }
 
   ngOnInit(): void {
     this.b = new Buyer();
@@ -77,6 +80,22 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   placeOrder() {
+    this.order = new Orders();
 
+    this.order.orderDate = this.str;
+    this.order.buyerId = this.bId;
+    this.order.supplierId = this.sId;
+    this.order.itemId = this.item.itemId;
+    this.order.itemQuantity = this.quantity;
+
+    console.log(this.order);
+
+    this.orderService.uploadNewOrder(this.order)
+      .subscribe(data => {
+        console.log(data);
+        alert(data);
+      }, error => console.log(error));
+
+    this.goHome();
   }
 }

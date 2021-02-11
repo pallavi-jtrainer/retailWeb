@@ -20,6 +20,6 @@ export class SupplierService {
     const body = JSON.stringify(sup);
 
     return this.http.post(`${this.baseUrl}/register/${sup.supplierName}/${sup.address}/`
-      + `${sup.contact}/${sup.emailAddr}/${user}/${pass}`, body, {headers: header, responseType: 'text'});
+      + `${sup.contact}/${sup.email}/${user}/${pass}`, body, {headers: header, responseType: 'text'});
   }
 }

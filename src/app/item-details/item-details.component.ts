@@ -61,8 +61,6 @@ export class ItemDetailsComponent implements OnInit {
   }
 
   goHome() {
-    // tslint:disable-next-line: radix
-    this.bId = parseInt(this.route.snapshot.paramMap.get('id2'));
     this.router.navigate(['/buyerdash', this.bId]);
   }
 
@@ -72,5 +70,13 @@ export class ItemDetailsComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
       }, error => console.log(error));
+  }
+
+  loadProfile() {
+    this.router.navigate(['/buyerdetails', this.bId]);
+  }
+
+  myOrders() {
+    this.router.navigate(['/buyerhistory', this.bId]);
   }
 }
