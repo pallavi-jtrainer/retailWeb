@@ -14,7 +14,6 @@ import { SupplierDashComponent } from './supplier-dash/supplier-dash.component';
 import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { InlineEditComponent } from './inline-edit/inline-edit.component';
-import { OrdersComponent } from './orders/orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 import { AddItemComponent } from './add-item/add-item.component';
@@ -31,7 +30,6 @@ import { InvoiceComponent } from './invoice/invoice.component';
     BuyerDetailsComponent,
     ItemDetailsComponent,
     InlineEditComponent,
-    OrdersComponent,
     OrderDetailsComponent,
     SupplierDetailsComponent,
     AddItemComponent,
