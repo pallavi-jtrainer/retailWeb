@@ -21,7 +21,6 @@
             <th>DESCRIPTION</th>
             <th>CATEGORY</th>
             <th>PRICE</th>
-            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
@@ -33,15 +32,12 @@
               <span><app-inline-edit [(ngModel)]="i.price" type="text" name="price" #price="ngModel"></app-inline-edit></span>
               <span style="margin-left: 5%;"><a (click)="updatePrice(i.itemId, price.value)"><i class="glyphicon glyphicon-pencil"></i></a></span>
             </td>
-            <td>
-              <button class="btn btn-warning"(click)="showItemDetails(i.itemId, s.supplierId)">Details</button>
-            </td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="align-right">
-      <span style="margin-left: 1%;"><button class="btn btn-warning"(click)="addNewItem()">Add Item</button></span>
+      <span style="margin-left: 87%;"><button class="btn btn-primary btn-lg addBtn"(click)="addNewItem()">Add New Item</button></span>
     </div>
   </div>
 </div>

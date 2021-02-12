@@ -1,3 +1,4 @@
+import { OrdersService } from './../orders.service';
 import { ItemsService } from './../items.service';
 import { SupplierService } from './../supplier.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -5,6 +6,7 @@ import { Items } from './../item-details/items';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Supplier } from './Supplier';
+import { Orders } from '../order-details/orders';
 
 @Component({
   selector: 'app-supplier-dash',
@@ -14,14 +16,18 @@ import { Supplier } from './Supplier';
 export class SupplierDashComponent implements OnInit {
 
   sId: number;
+
   s: Supplier;
   suppliername = '';
 
   items: Observable<Items[]>;
   item: Items = new Items();
 
+  orders: Observable<Orders[]>;
+
   constructor(private router: Router, private supplierService: SupplierService,
-              private itemService: ItemsService, private route: ActivatedRoute) { }
+              private itemService: ItemsService, private route: ActivatedRoute,
+              private orderService: OrdersService) { }
 
   ngOnInit(): void {
 
@@ -47,15 +53,11 @@ export class SupplierDashComponent implements OnInit {
   }
 
   showMyOrders() {
-
+    this.router.navigate(['/supplierhistory', this.sId]);
   }
 
   showPendingOrders() {
-
-  }
-
-  showItemDetails(item: number, id: number) {
-
+    this.router.navigate(['/pendingorders', this.sId]);
   }
 
   addNewItem() {

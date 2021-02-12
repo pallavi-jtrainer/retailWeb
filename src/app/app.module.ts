@@ -19,6 +19,8 @@ import { SupplierDetailsComponent } from './supplier-details/supplier-details.co
 import { AddItemComponent } from './add-item/add-item.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { BuyerOrdersComponent } from './buyer-orders/buyer-orders.component';
+import { SupplierOrdersComponent } from './supplier-orders/supplier-orders.component';
+import { PendingOrdersComponent } from './pending-orders/pending-orders.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { BuyerOrdersComponent } from './buyer-orders/buyer-orders.component';
     SupplierDetailsComponent,
     AddItemComponent,
     PlaceOrderComponent,
-    BuyerOrdersComponent
+    BuyerOrdersComponent,
+    SupplierOrdersComponent,
+    PendingOrdersComponent
   ],
   imports: [
     BrowserModule,

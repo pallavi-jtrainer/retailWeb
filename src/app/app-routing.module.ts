@@ -1,3 +1,6 @@
+import { PendingOrdersComponent } from './pending-orders/pending-orders.component';
+import { SupplierOrdersComponent } from './supplier-orders/supplier-orders.component';
+import { AddItemComponent } from './add-item/add-item.component';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { BuyerOrdersComponent } from './buyer-orders/buyer-orders.component';
@@ -24,6 +27,9 @@ const routes: Routes = [
   {path: 'buyerhistory/:id', component: BuyerOrdersComponent},
   {path: 'invoice/:id/:id1', component: OrderDetailsComponent},
   {path: 'suppdetails/:id', component: SupplierDetailsComponent},
+  {path: 'additem/:id', component: AddItemComponent},
+  {path: 'supplierhistory/:id', component: SupplierOrdersComponent},
+  {path: 'pendingorders/:id', component: PendingOrdersComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

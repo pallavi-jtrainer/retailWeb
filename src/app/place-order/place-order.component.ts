@@ -79,4 +79,12 @@ export class PlaceOrderComponent implements OnInit {
 
     this.goHome();
   }
+
+  loadProfile() {
+    this.router.navigate(['/buyerdetails', this.bId]);
+  }
+
+  myOrders() {
+    this.router.navigate(['/buyerhistory', this.bId]);
+  }
 }
