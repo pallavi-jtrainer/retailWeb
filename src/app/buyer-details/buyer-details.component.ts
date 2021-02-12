@@ -46,7 +46,7 @@ export class BuyerDetailsComponent implements OnInit {
     this.buyerService.updatePhone(this.b, p)
       .subscribe(data => {
         console.log(data);
-      }, error => console.log());
+      }, error => console.log(error));
   }
 
   updateAddress(add: string) {

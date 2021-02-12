@@ -1,1 +1,48 @@
-<p>supplier-dash works!</p>
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Welcome {{ suppliername }}</h2>
+      <ul>
+        <li><a><i class="glyphicon glyphicon-home space"></i>Home</a></li>
+        <li><a (click)="loadDetails()"><i class="glyphicon glyphicon-user space"></i>Profile</a></li>
+        <li><a (click)="showMyOrders()"><i class="glyphicon glyphicon-list-alt space"></i>My Orders</a></li>
+        <li><a (click)="showPendingOrders()"><i class="glyphicon glyphicon-tasks space"></i>Pending Orders</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-log-out space"></i>Sign Out</a></li>
+      </ul>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-head">
+      <h1 class="header-content">PRODUCTS LIST</h1>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr id="head-row">
+            <th>ID</th>
+            <th>DESCRIPTION</th>
+            <th>CATEGORY</th>
+            <th>PRICE</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let i of items'>
+            <td>{{ i.itemId }}</td>
+            <td>{{ i.itemName }}</td>
+            <td>{{ i.itemCategory }}</td>
+            <td style="display: flex;">
+              <span><app-inline-edit [(ngModel)]="i.price" type="text" name="price" #price="ngModel"></app-inline-edit></span>
+              <span style="margin-left: 5%;"><a (click)="updatePrice(i.itemId, price.value)"><i class="glyphicon glyphicon-pencil"></i></a></span>
+            </td>
+            <td>
+              <button class="btn btn-warning"(click)="showItemDetails(i.itemId, s.supplierId)">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="align-right">
+      <span style="margin-left: 1%;"><button class="btn btn-warning"(click)="addNewItem()">Add Item</button></span>
+    </div>
+  </div>
+</div>
+

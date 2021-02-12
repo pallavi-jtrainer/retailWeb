@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
           if (this.login.userType === 'SUPPLIER') {
             this.router.navigate(['suppdash/', this.login.userId]);
           }
+        } else {
+          alert('Wrong Username or Password! Please try again');
         }
         if (Object.keys(this.login).length === 0) {
           alert('Username or Password is Wrong! Please register if you are new here!');

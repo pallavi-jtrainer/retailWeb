@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
     if (this.userType === 'SUPPLIER' && this.passcode === this.passAgain) {
       this.sup.supplierName = this.uName;
       this.sup.address = this.address;
-      this.sup.contact = this.contact;
+      this.sup.phoneNumber = this.contact;
       this.sup.email = this.emailAddr;
       this.supplierService.registerSupplier(this.sup, this.userName, this.passcode)
         .subscribe(data => {

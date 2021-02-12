@@ -1,7 +1,7 @@
 export class Supplier {
   supplierId: number;
   supplierName: string;
-  contact: string;
+  phoneNumber: string;
   email: string;
   address: string;
 }

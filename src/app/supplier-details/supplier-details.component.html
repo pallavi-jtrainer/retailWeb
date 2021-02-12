@@ -1,1 +1,57 @@
-<p>supplier-details works!</p>
+<div class="wrapper">
+  <div class="sidebar">
+    <h2>Welcome {{ s.supplierName }}</h2>
+      <ul>
+        <li><a (click)="goHome()"><i class="glyphicon glyphicon-home space"></i>Home</a></li>
+        <li><a (click)="reloadData()"><i class="glyphicon glyphicon-user space"></i>Profile</a></li>
+        <li><a (click)="showMyOrders()"><i class="glyphicon glyphicon-list-alt space"></i>My Orders</a></li>
+        <li><a (click)="showPendingOrders()"><i class="glyphicon glyphicon-tasks space"></i>Pending Orders</a></li>
+        <li><a href="#"><i class="glyphicon glyphicon-log-out space"></i>Sign Out</a></li>
+      </ul>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 class="header-content">PROFILE INFORMATION</h2>
+    </div>
+    <div class="panel-body">
+      <div class="col-lg-3 col-md-2"></div>
+      <div *ngIf="s">
+        <table class="t-container">
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">ID:</td>
+            <td class="td" style="padding-left: 4%;">{{s.supplierId}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Name:</td>
+            <td class="td" style="padding-left: 4%;">{{s.supplierName}}</td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Address:</td>
+            <td class="td" style="padding-left: 4%;">
+              <app-inline-edit [(ngModel)]="s.address" type="text" name="address" #address="ngModel"></app-inline-edit>
+            </td>
+            <td><a (click)="updateAddress(address.value)"><i class="glyphicon glyphicon-pencil"></i></a></td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Contact No.:</td>
+            <td class="td" style="padding-left: 4%;">
+              <app-inline-edit [(ngModel)]="s.phoneNumber" type="text" name="phone" #phone="ngModel"></app-inline-edit>
+            </td>
+            <td><a (click)="updatePhone(phone.value)"><i class="glyphicon glyphicon-pencil"></i></a></td>
+          </tr>
+          <tr>
+            <td class="td-1" style="padding-left: 2%;">Email:</td>
+            <td class="td" style="padding-left: 4%;">
+              <app-inline-edit [(ngModel)]="s.email" type="text" name="email" #email="ngModel"></app-inline-edit>
+            </td>
+            <td><a (click)="updateEmail(email.value)"><i class="glyphicon glyphicon-pencil"></i></a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-lg-3 col-md-2"></div>
+    </div>
+  </div>
+</div>
+
+
+

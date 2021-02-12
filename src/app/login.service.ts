@@ -11,6 +11,10 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * to get single user details.
+   * @param name for username
+   */
   getUserById(name: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${name}`);
   }
